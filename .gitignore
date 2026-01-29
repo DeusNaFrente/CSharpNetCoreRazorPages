@@ -6,4 +6,4 @@ obj/
 *.suo
 *.cache
 *.log
-.env
+.env 
