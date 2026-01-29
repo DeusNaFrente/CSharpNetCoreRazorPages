@@ -1,6 +1,6 @@
 services:
   db:
-    image: mariadb:10.6
+    image: mariadb:10.6 
     container_name: contatos_db
     environment:
       MARIADB_DATABASE: contatosdb
@@ -37,3 +37,4 @@ services:
 
 volumes:
   contatos_mariadb:
+
