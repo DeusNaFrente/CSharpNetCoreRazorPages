@@ -1,4 +1,4 @@
-using ContatosApp.Data;
+using ContatosApp.Data; 
 using ContatosApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -68,3 +68,4 @@ public class CreateModel : PageModel
 	}
 
 }
+
