@@ -1,7 +1,7 @@
 using ContatosApp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContatosApp.Data;
+namespace ContatosApp.Data; 
 
 public class AppDbContext : DbContext
 {
@@ -30,3 +30,4 @@ public class AppDbContext : DbContext
             .IsUnique();
     }
 }
+
