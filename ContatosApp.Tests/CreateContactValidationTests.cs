@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace ContatosApp.Tests;
+namespace ContatosApp.Tests;   
 
 public class CreateContactValidationTests : IClassFixture<CustomWebApplicationFactory>
 {
@@ -207,3 +207,4 @@ public class CreateContactValidationTests : IClassFixture<CustomWebApplicationFa
 
 
 }
+
