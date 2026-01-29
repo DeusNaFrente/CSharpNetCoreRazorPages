@@ -7,9 +7,9 @@ Um app simples pra guardar contatos feito com ASP.NET Core 6.
 - ASP.NET Core 6 (Razor Pages)
 - Entity Framework Core
 - MariaDB 10.6
-- Autenticação com cookies (simples, sem frescura)
+- Autenticação com cookies
 - Docker pra não ter que configurar nada na mão
-- xUnit pros testes (pq né, tem que testar né)
+- xUnit pros testes
 
 ## Login para testar
 Usuário: admin
