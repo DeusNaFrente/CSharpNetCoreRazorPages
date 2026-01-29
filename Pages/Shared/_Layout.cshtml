@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ContatosApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ContatosApp.styles.css" asp-append-version="true" />
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#64748b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50">
+        <nav class="bg-white shadow-md py-3">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-8">
+                        <a class="text-2xl font-bold text-primary hover:text-blue-700 transition-colors" 
+                           asp-area="" asp-page="/Index">
+                            <span class="bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
+                                Contatos
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        @if (User?.Identity?.IsAuthenticated ?? false)
+                        {
+                            <div class="relative group">
+                                <form method="post" asp-page="/Login" asp-page-handler="Logout" class="inline">
+                                    <button type="submit" class="text-gray-700 hover:text-primary font-medium transition-colors px-4 py-2 rounded-lg hover:bg-blue-50 flex items-center space-x-2">
+                                        <span>Sair</span>
+                                        <span class="text-sm text-blue-600 font-semibold">(@User.Identity!.Name)</span>
+                                    </button>
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="bg-primary hover:bg-blue-700 text-white font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5" 
+                               asp-page="/Login">
+                                Entrar
+                            </a>
+                        }
+                        
+                        <button class="md:hidden text-gray-700 hover:text-primary focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="flex-grow">
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-600 text-sm mb-4 md:mb-0">
+                    &copy; 2026 - Contatos - 
+                    <a class="text-primary hover:text-blue-700 font-medium transition-colors" 
+                       asp-area="" asp-page="/Privacy">
+                        Privacy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

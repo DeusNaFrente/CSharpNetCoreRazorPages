@@ -1,0 +1,39 @@
+services:
+  db:
+    image: mariadb:10.6
+    container_name: contatos_db
+    environment:
+      MARIADB_DATABASE: contatosdb
+      MARIADB_USER: app
+      MARIADB_PASSWORD: app123
+      MARIADB_ROOT_PASSWORD: root
+    ports:
+      - "3308:3306"
+    volumes:
+      - contatos_mariadb:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  web:
+    image: mcr.microsoft.com/dotnet/sdk:6.0
+    container_name: contatos_web
+    working_dir: /src
+    volumes:
+      - ./:/src
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://0.0.0.0:5000
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      bash -lc "dotnet restore &&
+                dotnet run --urls http://0.0.0.0:5000"
+
+volumes:
+  contatos_mariadb:
