@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ContatosApp.Tests;
+namespace ContatosApp.Tests; 
 
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {
@@ -51,3 +51,4 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
         });
     }
 }
+
