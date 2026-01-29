@@ -1,40 +1,28 @@
-Contatos – ASP.NET Core 6
+# Contatos App 📞
 
-Aplicação web desenvolvida teste utilizando ASP.NET Core 6, Razor Pages, Entity Framework Core e MariaDB 10.6.
+Um app simples pra guardar seus contatos feito com ASP.NET Core 6. Nada de outro mundo, mas funciona direitinho!
 
-Tecnologias
+## Tecnologias que usei
 
-ASP.NET Core 6
+- ASP.NET Core 6 (Razor Pages)
+- Entity Framework Core
+- MariaDB 10.6
+- Autenticação com cookies (simples, sem frescura)
+- Docker pra não ter que configurar nada na mão
+- xUnit pros testes (pq né, tem que testar né)
 
-Razor Pages
+## Login pra testar
+Usuário: admin
 
-Entity Framework Core
+Senha: admin123
 
-MariaDB 10.6
-
-Autenticação por Cookies
-
-xUnit + Microsoft.AspNetCore.Mvc.Testing
-
-Docker (ambiente local)
+Nos testes automatizados eu simulo o login para não precisar por as credenciais
 
 Estrutura
 
 Projeto com uma única aplicação web, sem separação entre API e frontend.
 
-Autenticação
-
-Usuário fixo para testes manuais:
-
-Usuário: admin
-Senha:  admin123
-
-
-Nos testes automatizados, a autenticação é simulada via TestAuthHandler.
-
 Banco de dados
-
-MariaDB 10.6
 
 Gerenciado por Entity Framework Core
 
