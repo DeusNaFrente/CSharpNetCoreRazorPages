@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations; 
 
 namespace ContatosApp.Models;
 
@@ -24,3 +24,4 @@ public class Contact
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
     public DateTime? DeletedAtUtc { get; set; }
 }
+
