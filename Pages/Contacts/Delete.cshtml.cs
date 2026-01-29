@@ -1,4 +1,4 @@
-using ContatosApp.Data;
+using ContatosApp.Data; 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +19,7 @@ public class DeleteModel : PageModel
     public async Task<IActionResult> OnPostAsync(int id)
     {
         var contact = await _context.Contacts
-            .IgnoreQueryFilters() // para conseguir excluir também se já estiver "sumido"
+            .IgnoreQueryFilters() //Para conseguir excluir também se já estiver "sumido"
             .FirstOrDefaultAsync(c => c.Id == id);
 
         if (contact is null)
@@ -37,3 +37,4 @@ public class DeleteModel : PageModel
         return RedirectToPage("/Index");
     }
 }
+
