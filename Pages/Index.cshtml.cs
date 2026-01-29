@@ -1,4 +1,4 @@
-using ContatosApp.Data; 
+using ContatosApp.Data;  
 using ContatosApp.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
