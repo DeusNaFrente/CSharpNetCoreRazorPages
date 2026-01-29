@@ -1,6 +1,6 @@
 # Contatos App 📞
 
-Um app simples pra guardar seus contatos feito com ASP.NET Core 6. Nada de outro mundo, mas funciona direitinho!
+Um app simples pra guardar contatos feito com ASP.NET Core 6.
 
 ## Tecnologias que usei
 
