@@ -11,7 +11,7 @@ Um app simples pra guardar seus contatos feito com ASP.NET Core 6. Nada de outro
 - Docker pra não ter que configurar nada na mão
 - xUnit pros testes (pq né, tem que testar né)
 
-## Login pra testar
+## Login para testar
 Usuário: admin
 
 Senha: admin123
